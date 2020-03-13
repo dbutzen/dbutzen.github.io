@@ -21,9 +21,11 @@
 
         #sitewide {
             max-width: 960px;
+            padding-top: 3%;
             margin-left: auto;
             margin-right: auto;
         }
+
 
         /*#menu {
             float: left;
@@ -32,9 +34,15 @@
         */
         .menu {
             float: left;
-            width: 25%;
+            width: 14%;
+            padding-left: 5%;
+            padding-right: 5%;
             text-align: center;
+            border: rgb(32, 9, 9);
+            border-style: solid;
+            border-width: 2px;
         }
+        
         .scrollables{
             float:left;
             width: 80%;
@@ -47,19 +55,37 @@
     /**/
     $(function(){
         $('.scrollables').not('#about').toggle();
+        $('#menuAbout').css('text-decoration',  'underline');
+
+        $('.menu').hover(function(){
+            $(this).css("background-color", "black");
+            $(this).css("color", "blanchedalmond");
+        }, function(){
+            $(this).css("background-color", "blanchedalmond");
+            $(this).css("color", "rgb(32, 9, 9)");
+        });
+
         $('#menuAbout').click(function(){
+            $('.menu').css('text-decoration', 'none');
+            $(this).css('text-decoration',  'underline');
             $('.scrollables').hide();
             $('#about').toggle();
         });
         $('#menuResume').click(function(){
+            $('.menu').css('text-decoration', 'none');
+            $(this).css('text-decoration', 'underline');
             $('.scrollables').hide();
             $('#resume').toggle();
         });
         $('#menuCover').click(function(){
+            $('.menu').css('text-decoration', 'none');
+            $(this).css('text-decoration', 'underline');
             $('.scrollables').hide();
             $('#coverletter').toggle();
         });
         $('#menuProj').click(function(){
+            $('.menu').css('text-decoration', 'none');
+            $(this).css('text-decoration',  'underline');
             $('.scrollables').hide();
             $('#projects').toggle();
         });
@@ -117,7 +143,9 @@
         <p>Currently working full time in a lead position at a local supermarket, Dan continues to attend college full time and find spare time for projects outside of school, including 
         programming an isometric city builder in Unity, creating a MySql database to track his life habits (including front end interface), and maintaining and improving this website.</p>
 
-        <p>Dan hopes to find a full time internship in the web or software development fields to further his goals of becoming a successful programmer.
+        <p>Dan hopes to find a full time internship in the web or software development fields to further his goals of becoming a successful programmer.</p>
+
+        <p>Dan's endgoal is to work in software development in either VR or AR, although that goal is liable to change depending on opportunities given.</p>
 
     </p>
     <h3>Contact:</h3>
@@ -177,7 +205,7 @@
     <p class="category">Other Accolades</p>
     <ul>
         <li>Mensa member</li>
-        <li>Scored in 99th percentile of every category on RAIT (Reynolds Adaptable Intelligence Test)</li>
+        <li>Scored in 99th percentile of every category when taking the RAIT (Reynolds Adaptable Intelligence Test)</li>
     </ul>
     <p class="category">Work Experience</p>
     <ul>
@@ -231,7 +259,8 @@
         <li><a href="https://dev.azure.com/dbutzen/_git/Calculator">Working calculator</a> with functionailty such as:<ul>
             <li>+, -, /, * operators</li>
             <li>sqrt, neg/pos, 1/X functions</li>
-            <li>Ability to chain equations (ie, pressing 2 + 2 * will show 4 and have the * operator saved for next input</li>
+            <li>Ability to chain equations (ie, pressing 2 + 2 * will show 4 and have the * operator saved for next input)</li>
+            <li></li>
             <li>TODO: parentheses, memory, trig functions</li>
         </ul></li>
     </ul>
@@ -241,8 +270,8 @@
     </ul>
     <h3>Unity</h3>
     <ul>
-        <li>Goal: Isometric city builder</li>
-        <li>Current phase: programming tilemap + art</li>
+        <li>Goal: Isometric city builder<ul>
+        <li>Current phase: programming tilemap + art</li></ul></li>
     </ul>
 </div>
 
