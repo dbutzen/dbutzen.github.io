@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <meta lang="en" charset="utf-8">
@@ -7,11 +8,246 @@
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+
+        
+
+
+    <style>
+        html {
+            background-color: blanchedalmond;
+            color: rgb(32, 9, 9);
+            overflow-y:scroll;
+        }
+
+        #sitewide {
+            max-width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /*#menu {
+            float: left;
+            width: 100%;
+        }
+        */
+        .menu {
+            float: left;
+            width: 25%;
+            text-align: center;
+        }
+        .scrollables{
+            float:left;
+            width: 80%;
+            padding-left: 10%;
+        }
+
+    </style>
+
+<script>
+    /**/
+    $(function(){
+        $('.scrollables').not('#about').toggle();
+        $('#menuAbout').click(function(){
+            $('.scrollables').hide();
+            $('#about').toggle();
+        });
+        $('#menuResume').click(function(){
+            $('.scrollables').hide();
+            $('#resume').toggle();
+        });
+        $('#menuCover').click(function(){
+            $('.scrollables').hide();
+            $('#coverletter').toggle();
+        });
+        $('#menuProj').click(function(){
+            $('.scrollables').hide();
+            $('#projects').toggle();
+        });
+
+    });/**/
+
+    /**$(function(){
+        $('.scrollables').toggle();
+        $('#menuAbout').click(function(){
+            $('.scrollables').animate({
+                left: '-50%'}, 500, function(){
+                    $(this).css('margin-left', '150%');
+                });
+            $('#about').animate({
+                left: '50%'
+            }, 500);
+        });
+        $('#menuResume').click(function(){
+            $('.scrollables').hide();
+            $('#resume').toggle();
+        });
+        $('#menuCover').click(function(){
+            $('.scrollables').hide();
+            $('#coverletter').toggle();
+        });
+        $('#menuProj').click(function(){
+            $('.scrollables').hide();
+            $('#projects').toggle();
+        });
+
+    });/**/
+</script>
     
 </head>
-
+<div id="sitewide">
 <body>
+<header>
+    <h1 style="padding-left: 20%">Dan Butzen</h1>
+    <div id="menu">
+        <h2 id="menuAbout" class="menu">About</h2>
+        <h2 id="menuResume" class="menu">Resume</h2>
+        <h2 id="menuCover" class="menu">Cover Letter</h2>
+        <h2 id="menuProj" class="menu">Projects</h2>
+    </div>
+</header>
+<div id="about" class="scrollables">
+    <h3>Dan's Story</h3>
+    <p></p>
+    <p>Dan started his adult life at the University of Wisconsin - Madison, where he achieved a Bachelor's of Science from the Physics Department. Post-graduation, he decided to explore 
+        a possible future in the actuarial field, and proceeded to pass the first three exams (probability, financial mathematics, and methods of financial economics) before deciding
+        against this possible future. Remembering some computer science classes he took at Madison, Dan looked into the computer science field, and found his calling. Now a student
+        at the Fox Valley Technical College, Dan is continuing to pursue programming with a passion, going above and beyond on assignments, and pushing passed the scope of the classes
+        he takes.</p>
 
+        <p>Currently working full time in a lead position at a local supermarket, Dan continues to attend college full time and find spare time for projects outside of school, including 
+        programming an isometric city builder in Unity, creating a MySql database to track his life habits (including front end interface), and maintaining and improving this website.</p>
+
+        <p>Dan hopes to find a full time internship in the web or software development fields to further his goals of becoming a successful programmer.
+
+    </p>
+    <h3>Contact:</h3>
+    <ul>
+        <li>Address<ul>
+            <li>1710 N McCarthy Rd Apt #9</li>
+            <li>Grand Chute, WI</li>
+            <li>54914</li>
+        </ul></li>
+        <br/>
+        <li>Personal Email: dtbutzen@att.net</li>
+        <li>School Email: 300057079@fvtc.edu</li>
+        <br/>
+        <li>Cell: (920) 574-7830</li>
+    </ul>
+</div>
+<div id="container">
+<div id="resume" class="scrollables">
+    <h2>Resume</h2>
+    <p><strong>Objective:</strong> Summer Internship in IT Software Dev or Web/App Dev</p>
+    <p class="category">Education</p>
+    <ul>
+        <li class="college">
+            University of Wisconsin - Madison
+            <ul>
+                <li>College of Letters and Sciences - Physics Department</li>
+                <li>Bachelor of Science (May 2016)</li>
+            </ul>
+        </li>
+        <li class="college">
+            Fox Valley Technical College
+            <ul>
+                <li>Associate's in IT - Software Developer (expected May 2021)</li>
+                <li>GPA: 4.0</li>
+            </ul>
+
+        </li>
+    </ul>
+    <p class="category">Strengths</p>
+    <ul>
+        <li>Analytical</li>
+        <li>Quick Learner</li>
+        <li>Adept Problem Solver</li>
+        <li>Detail Oriented</li>
+        <li>Strives to Go Beyond Requirements</li>
+    </ul>
+    <p class="category">Skills</p>
+    <ul>
+        <li>Microsoft Word/Excel</li>
+        <li>Java, C#, C++*</li>
+        <li>Javscript*/Jquery*</li>
+        <li>MySQL/Sql Server*</li>
+        <li>PHP*</li>
+        <li>HTML/CSS</li>
+    </ul>
+    <p>(* currently enrolled)</p>
+    <p class="category">Other Accolades</p>
+    <ul>
+        <li>Mensa member</li>
+        <li>Scored in 99th percentile of every category on RAIT (Reynolds Adaptable Intelligence Test)</li>
+    </ul>
+    <p class="category">Work Experience</p>
+    <ul>
+        <li>Festival Foods</li>
+        <li>Popcorn Stall Lead (Dec 2019 - current)
+            <ul>
+                <li>Order and maintain inventory</li>
+                <li>Work efficiently to maintain stock levels</li>
+                <li>Help organize sales and events</li>
+                <li>Manage other employees, including training and scheduling</li>
+            </ul>
+        </li>
+        <li>Product Clerk (August 2017 - Dec 2019)
+            <ul>
+                <li>Maintain floor stock levels</li>
+                <li>Greet and solve guests' needs in a friendly manor</li>
+                <li>Train and manage other employees</li>
+            </ul>
+        </li>
+        <li>Third Shift Stocker (June 2016 - August 2017)
+        </li>
+    </ul>
+</div>
+<div id="coverletter" class="scrollables">
+    <h3>Dear Hiring Manager,</h3>
+    <p>I am writing to express interest in an internship position in web development or software development. My analytical skills, ability to learn quickly, 
+        and communication aptitude all make me an ideal fit for a position in either of these categories.</p>
+    <p>My analytical skills and potential make me an ideal candidate for any position. My degree in physics, while not my calling in life, 
+        does show my ability to learn complex concepts in math and logic. I also was successful in passing the Mensa exam, further showing how high my ceiling can go. 
+        Given my potential, I am excited to continue my work in programming and web development.</p>
+    <p>My quick learning has always helped me succeed in what I do, whether that be in employment or academia. After graduating college the first time, 
+        I briefly decided to pursue a possible future in the actuarial field, and made it through three exams (probability, financial mathematics, 
+        and methods of financial economics) before deciding against it. My ability to learn quickly allowed me to study on my own and pass these difficult exams. 
+        On the employment side, I was put into a leadership role in a new environment at my current job (festival foods) when I switched from produce clerk to popcorn stall lead. 
+        I was able to learn the job through two days of training, and was trusted to take over completely immediately after. 
+        My ability to learn speedily is an attribute which will allow me to succeed no matter the case.</p>
+    <p>Accurate and understandable communication is a necessity at any job site. My current employment requires communication at multiple levels. 
+        Speaking with customers requires one language, management another, written communication to corporate a third, and maintenance a fourth. 
+        The ability to cycle through these communication types depending on the situation takes time to learn, and after years of experience, 
+        I find myself to be more than capable of tackling whatever communication level is thrown at me.</p>
+    <p>It took me longer than I expected to find what I enjoy doing for employment, but now that I know where I want to be, 
+        I’m ready to put myself fully into showing what I’m capable of and moving forward quickly in the workplace.</p>
+    <br />
+    <p>Thank you for your time and I look forward to discussing my possible future at your company,</p>
+    <br />
+    <p>Daniel Butzen</p>
+</div>
+<div id="projects" class="scrollables">
+    <h3>C#</h3>
+    <ul>
+        <li><a href="https://dev.azure.com/dbutzen/_git/Calculator">Working calculator</a> with functionailty such as:<ul>
+            <li>+, -, /, * operators</li>
+            <li>sqrt, neg/pos, 1/X functions</li>
+            <li>Ability to chain equations (ie, pressing 2 + 2 * will show 4 and have the * operator saved for next input</li>
+            <li>TODO: parentheses, memory, trig functions</li>
+        </ul></li>
+    </ul>
+    <h3>HTML/CSS/JavaScript/JQuery</h3>
+    <ul>
+        <li>This website</li>
+    </ul>
+    <h3>Unity</h3>
+    <ul>
+        <li>Goal: Isometric city builder</li>
+        <li>Current phase: programming tilemap + art</li>
+    </ul>
+</div>
 
     
+</div>
 </body>
+</div>
+</html>
