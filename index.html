@@ -74,6 +74,9 @@
             padding-left: 5%;
             padding-right: 5%;
             background-color: white;
+            border-style: solid;
+            border-width: 2px;
+            border-bottom-color: black;
         }
         
         select {
@@ -93,6 +96,31 @@
         }
         .menuAbout {
             text-decoration: underline;
+        }
+        
+        #video1 { grid-area: vid1};
+        #description1 {grid-area: desc1 };
+        #video2 { grid-area: vid2};
+        #decription2 { grid-area: desc2 };
+        
+        .grid-container{
+            display: grid;
+            grid-template-areas: 
+                'vid1 vid1 vid1 vid1 desc1 desc1'
+                'vid2 vid2 desc2 desc2 desc2 desc2';
+            grid-gap: 5px;
+            background-color: black;
+            
+        }
+        
+        .grid-container > div {
+            background-color: white;
+            padding: 10px;
+            
+        }
+        
+        .description {
+            width: 20%;
         }
 
     </style>
@@ -235,9 +263,6 @@
     <ul>
         <li>Address
             <ul>
-            <!--<li>1710 N McCarthy Rd Apt #9</li>
-            <li>Appleton, WI</li>
-            <li>54913</li>-->
                 <li>8223 Bella Vista Blv apt 5312</li>
                 <li>Indianapolis, IN</li>
                 <li>46038</li>
@@ -297,13 +322,14 @@
                 <li>Trained and succeeded in multiple roles</li>
             </ul>
         <br />
-        <li>Popcorn Stall Lead - Festival Foods - (Dec 2019 - Sept 2020)</li>
+        <li>Popcorn Stall Lead - Festival Foods - (Dec 2019 - Sept 2020)
             <br />
             <ul>
                 <li>Manage and train associates</li>
                 <li>Work with store leaderships and corporate offices to improve and grow business</li>
                 <li>Improved weekly sales by 50% through 6 months</li>
             </ul>
+        </li>
     </ul>
 </div>
 <div id="coverletter" class="scrollables">
@@ -328,7 +354,43 @@
     <p>Daniel Butzen</p>
 </div>
 <div id="projects" class="scrollables">
-    WORK IN PROGRESS
+    <div class="grid-container">
+        <div id="description1" class="description">
+            <h2>Scrabble App</h2>
+            <h3>Features:</h3>
+            <ul class="feature-list">
+                <li>Javascript</li>
+                <li>HTML/CSS</li>
+                <li>C#</li>
+                <li>Visual Studio</li>
+                <li>Web App</li>
+                <li>MVC</li>
+                <li>Multitier architecture</li>
+            </ul>
+        </div>
+        <div id="video1" class="video">
+            <iframe width="90%" height="90%" src="https://www.youtube.com/embed/Q6rlSUkVZa0">
+            </iframe>
+        </div>
+        
+        <div id="description2" class="description">
+            <h2>FitApp</h2>
+            <h3>Features:</h3>
+            <ul class="feature-list">
+                <li>C#</li>
+                <li>XML</li>
+                <li>WPF</li>
+                <li>Visual Studio</li>
+                <li>Multitier architecture</li>
+                <li>Database Design</li>
+            </ul>
+        </div>
+        <div id="video2" class="video">
+            <iframe width="90%" height="90%" src="https://www.youtube.com/embed/byLYuOeMGf0">
+            </iframe>
+        </div>
+    </div>
+    
     
 </div>
 
