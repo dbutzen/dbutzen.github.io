@@ -1,401 +1,410 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta lang="en" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8" lang="en">
     <title>Dan Butzen - Home</title>
     <script
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
-    <!--<link rel="stylesheet" href="https://getbootstrap.com/1.4.0/assets/css/bootstrap.min.css">-->
-
-        
-
-
     <style>
-        html {
-            background-color: white;
-            color: black;
-            overflow-y:scroll;
-        }
-        
-        body {
-            background-color: white;
-        }
-        header {
-            background-color: white;
-            width: 87%;
-            margin-left: 10
-        }
-
-        #sitewide {
-            max-width: 1050px;
-            padding-top: 3%;
-            margin-left: auto;
-            margin-right: auto;
-            
-        }
-        
-        #nav nav #dropdown select {
-            display: none;
-        }
-
-        @media (max-width: 1000px) {
-            #nav nav #menu .menu { display: none; }
-            #nav nav #dropdown select { display: block }
-        }
-
-
-        /*#menu {
-            float: left;
-            width: 100%;
-        }
-        */
-        .menu {
-            float: left;
-            width: 14.25%;
-            padding-left: 5%;
-            padding-right: 5%;
-            text-align: center;
-            border: black;
-            border-style: hidden;
-            border-width: 2px;
-            border-collapse: collapse;
-            background-color: white;
-        }
-        .menu h2 {
-            border-width: 2px;
-        }
-        
-        .scrollables{
-            float:left;
-            width: 87%;
-            padding-left: 5%;
-            padding-right: 5%;
-            background-color: white;
-            border-style: solid;
-            border-width: 2px;
-            border-bottom-color: black;
-        }
-        
-        select {
-            margin-left: 70%;
-            width: 140px;
-            text-align: right;
-            font-size: 20px;
-            background-color: white;
-        }
-        
-        .category {
-            border-style: solid;
-            font-size: 20px
-        }
-        .bolded-text {
-            font-weight: bold;
-        }
-        .menuAbout {
-            text-decoration: underline;
-        }
-        
-        #video1 { grid-area: vid1};
-        #description1 {grid-area: desc1 };
-        #video2 { grid-area: vid2};
-        #decription2 { grid-area: desc2 };
-        
-        .grid-container{
-            display: grid;
-            grid-template-areas: 
-                'vid1 vid1 vid1 vid1 desc1 desc1'
-                'vid2 vid2 desc2 desc2 desc2 desc2';
-            grid-gap: 5px;
+        html{
             background-color: black;
-            
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        #content {
+            margin-top: 40px;
+            padding: 16px;
+        }
+
+        #nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            text-align: center;
+            background-color: black;
         }
         
-        .grid-container > div {
-            background-color: white;
+        #nav h2 {
+            text-align: center;
             padding: 10px;
+            color: black;
+            float: right;
+            width: 15%;
+        }
+        
+        .rightmost-button {
+            margin-right: 7%;
+        }
+
+
+        .rounded-border {
+            border-radius: 25px;
+            border-style: solid;
+            border-color: black;
+            border-width: 2px;
+            background-color: #f1f1f1;
+        }
+
+        #swappable-surrounder {
+            background-color: black;
+        }
+        
+        .hamburger {
+            width: auto;
+            height: 5px;
+            background-color: black;
+            margin: 6px 0;
+            margin-left: 25%;
+            margin-right: 25%;
+            
+            
+            
+        }
+
+        .swappable {
+            margin-top: 50px;
+            width: 87%;
+            margin-left: 5%;
+            margin-right: 5%;
+            padding: 15px;
+            height: 1000px;
+            background-color: #f1f1f1;
+            font-size: 20px;
+        }
+        
+        
+        #dropdown { 
+            margin-right: 7%;
+            display: none; 
+        }
+        
+        .dropdown-options {
+            display: none;
+            position: fixed;
+            right: 7%;
+            top: 80px;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-options h3:hover {
+            background-color: black;
+            color: white;
+        }
+        
+        .dropdown-options h3 {
+            padding: 10px 10px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        #dropdown:hover .dropdown-options {
+            display: block;
+        }
+        
+        @media (max-width: 1000px) {
+            #menu { display: none; }
+            #dropdown { display: block; color: }
             
         }
         
-        .description {
-            width: 20%;
-        }
-
-    </style>
-
-<script>
-    /**/
-    $(function(){
-        $('.scrollables').not('#about').toggle();
-        $('.menuAbout').css('text-decoration',  'underline');
-
-        $('.menu').hover(function(){
-            $(this).css("background-color", "black");
-            $(this).css("color", "white");
-        }, function(){
-            $(this).css("background-color", "white");
-            $(this).css("color", "black");
-        });
-
-        $('.menuAbout').click(function(){
-            $('.menu').css('text-decoration', 'none');
-            $(this).css('text-decoration',  'underline');
-            $('.scrollables').hide();
-            $('#about').toggle();
-        });
-        $('.menuResume').click(function(){
-            $('.menu').css('text-decoration', 'none');
-            $(this).css('text-decoration', 'underline');
-            $('.scrollables').hide();
-            $('#resume').toggle();
-        });
-        $('.menuCover').click(function(){
-            $('.menu').css('text-decoration', 'none');
-            $(this).css('text-decoration', 'underline');
-            $('.scrollables').hide();
-            $('#coverletter').toggle();
-        });
-        $('.menuProj').click(function(){
-            $('.menu').css('text-decoration', 'none');
-            $(this).css('text-decoration',  'underline');
-            $('.scrollables').hide();
-            $('#projects').toggle();
-        });
         
-        $('#dropdown-select').change(function() {
-            if($("#dropdown-select option:selected").text() == "About" ){
+    </style>
+    
+    <script>
+        /**/
+        $(function(){
+            $('.scrollables').not('#about').toggle();
+            $('.menuAbout').css('text-decoration',  'underline');
+
+            $('.menu').hover(function(){
+                $(this).css("background-color", "black");
+                $(this).css("color", "white");
+            }, function(){
+                $(this).css("background-color", "white");
+                $(this).css("color", "black");
+            });
+            
+            $('.dropdown-button').hover(function(){
+                $(this).css("background-color", "lightgray");
+                $(this).css("color", "black");
+            }, function(){
+                $(this).css("background-color", "white");
+                $(this).css("color", "black");
+            });
+
+            $('.menuAbout').click(function(){
                 $('.menu').css('text-decoration', 'none');
                 $(this).css('text-decoration',  'underline');
                 $('.scrollables').hide();
                 $('#about').toggle();
-            }
-            else if($("#dropdown-select option:selected").text() == "Resume" ){
+            });
+            $('.menuResume').click(function(){
                 $('.menu').css('text-decoration', 'none');
                 $(this).css('text-decoration', 'underline');
                 $('.scrollables').hide();
                 $('#resume').toggle();
-            }
-            else if($("#dropdown-select option:selected").text() == "Cover Letter" ){
+            });
+            $('.menuCover').click(function(){
                 $('.menu').css('text-decoration', 'none');
                 $(this).css('text-decoration', 'underline');
                 $('.scrollables').hide();
                 $('#coverletter').toggle();
-            }
-            else if($("#dropdown-select option:selected").text() == "Demos" ){
+            });
+            $('.menuProj').click(function(){
                 $('.menu').css('text-decoration', 'none');
                 $(this).css('text-decoration',  'underline');
                 $('.scrollables').hide();
                 $('#projects').toggle();
-            }
-        })
+            });
 
-    });/**/
+            /*$('#dropdown-select').change(function() {
+                if($("#dropdown-select option:selected").text() == "About" ){
+                    $('.menu').css('text-decoration', 'none');
+                    $(this).css('text-decoration',  'underline');
+                    $('.scrollables').hide();
+                    $('#about').toggle();
+                }
+                else if($("#dropdown-select option:selected").text() == "Resume" ){
+                    $('.menu').css('text-decoration', 'none');
+                    $(this).css('text-decoration', 'underline');
+                    $('.scrollables').hide();
+                    $('#resume').toggle();
+                }
+                else if($("#dropdown-select option:selected").text() == "Cover Letter" ){
+                    $('.menu').css('text-decoration', 'none');
+                    $(this).css('text-decoration', 'underline');
+                    $('.scrollables').hide();
+                    $('#coverletter').toggle();
+                }
+                else if($("#dropdown-select option:selected").text() == "Demos" ){
+                    $('.menu').css('text-decoration', 'none');
+                    $(this).css('text-decoration',  'underline');
+                    $('.scrollables').hide();
+                    $('#projects').toggle();
+                }
+            })*/
 
-    /**$(function(){
-        $('.scrollables').toggle();
-        $('#menuAbout').click(function(){
-            $('.scrollables').animate({
-                left: '-50%'}, 500, function(){
-                    $(this).css('margin-left', '150%');
-                });
-            $('#about').animate({
-                left: '50%'
-            }, 500);
-        });
-        $('#menuResume').click(function(){
-            $('.scrollables').hide();
-            $('#resume').toggle();
-        });
-        $('#menuCover').click(function(){
-            $('.scrollables').hide();
-            $('#coverletter').toggle();
-        });
-        $('#menuProj').click(function(){
-            $('.scrollables').hide();
-            $('#projects').toggle();
-        });
+        });/**/
 
-    });/**/
-</script>
-    
+        /**$(function(){
+            $('.scrollables').toggle();
+            $('#menuAbout').click(function(){
+                $('.scrollables').animate({
+                    left: '-50%'}, 500, function(){
+                        $(this).css('margin-left', '150%');
+                    });
+                $('#about').animate({
+                    left: '50%'
+                }, 500);
+            });
+            $('#menuResume').click(function(){
+                $('.scrollables').hide();
+                $('#resume').toggle();
+            });
+            $('#menuCover').click(function(){
+                $('.scrollables').hide();
+                $('#coverletter').toggle();
+            });
+            $('#menuProj').click(function(){
+                $('.scrollables').hide();
+                $('#projects').toggle();
+            });
+        });/**/
+    </script>
 </head>
-<div id="sitewide">
 <body>
-<header>
-    <h1 style="padding-left: 20%">Dan Butzen</h1>
-    
-</header>
-<div id="nav">
-    <nav>
-        <div id="menu">
-            <h2 class="menu menuAbout">About</h2>
-            <h2 class="menu menuResume">Resume</h2>
-            <h2 class="menu menuCover">Cover Letter</h2>
-            <h2 class="menu menuProj">Demos</h2>
+    <header>
+        <div id="nav">
+            <nav>
+                <div id="menu">
+                    <h2 class="menu menuProj rounded-border rightmost-button">Demos</h2>
+                    <h2 class="menu menuCover rounded-border">Cover Letter</h2>
+                    <h2 class="menu menuResume rounded-border">Resume</h2>
+                    <h2 class="menu menuAbout rounded-border">About</h2>
+                </div>
+                <div id="dropdown">
+                    <h2 class="dropdown-button rounded-border">
+                        <div class="hamburger"></div>
+                        <div class="hamburger"></div>
+                        <div class="hamburger"></div>
+                    </h2>
+                    <div class="dropdown-options">
+                        <h3 class="menuAbout">About</h3>
+                        <h3 class="menuResume">Resume</h3>
+                        <h3 class="menuCover">Cover Letter</h3>
+                        <h3 class="menuProj">Demos</h3>
+                    </div>
+                </div>
+            </nav>    
         </div>
-        <div id="dropdown">
-            <select id="dropdown-select" style="margin-top: 40px; margin-bottom: 30px;">
-                <option class="menu">Select</option>
-                <option value="about" class="menu menuAbout">About</option>
-                <option value="resume" class="menu menuResume">Resume</option>
-                <option value="cover-letter" class="menu menuCover">Cover Letter</option>
-                <option value="demos" class="menu menuProj">Demos</option>
-            </select>
-        </div>
-    </nav>    
-</div>
-<div id="about" class="scrollables">
-    <h3>Dan's Story</h3>
-    <p></p>
-    <p>Dan started his adult life at the University of Wisconsin - Madison, where he achieved a Bachelor's of Science from the Physics Department. Post-graduation, he decided to explore 
-        a possible future in the actuarial field, and proceeded to pass the first three exams (probability, financial mathematics, and methods of financial economics) before deciding
-        against going straight into the actuarial field. Remembering some computer science classes he took at Madison, Dan looked into the computer science field, and found his calling. Now graduated from Fox Valley Technical College with a Software Developer Associate's Degree, Dan is continuing to pursue programming with a passion, including continuing to improve his existing projects and starting new ones (most recently, his wedding website).</p>
-
-
-        <p>Dan's interests in the field of IT lay mostly in back software development, specifically using .NET framework with c# and javascript. </p>
-
-        <p>Dan hopes to start making waves in the IT field as soon as possible with employment either in the Indianapolis are or remote.</p>
+    </header>
+    <div id="content">
 
         
-    <h3>Contact:</h3>
-    <ul>
-        <li>Address
-            <ul>
-                <li>8223 Bella Vista Blv apt 5312</li>
-                <li>Indianapolis, IN</li>
-                <li>46038</li>
-            </ul>
-        </li>
-        <br/>
-        <li>Email: dtbutzen@att.net</li>
-        <br/>
-        <li>Cell: (920) 574-7830</li>
-    </ul>
-</div>
-<div id="container">
-<div id="resume" class="scrollables">
-    <h2>Resume</h2>
-    <p><strong>Objective:</strong> Full time IT emplyment as a software developer or engineer.</p>
-    
-    <p class="category">Technical Skills</p>
-    <ul>
-        <li>.NET</li>
-        <li>C#</li>
-        <li>Javscript/Jquery</li>
-        <li>MySQL/Sql Server</li>
-        <li>HTML/CSS</li>
-    </ul>
-    
-    <p class="category">Professional Skills</p>
-    <ul>
-        <li>Probability Actuarial Exam</li>
-        <li>Financial Mathematics Actuarial Exam</li>
-        <li>Models of Financial Economics Actuarial Exam</li>
-        <li>Scored in 99th percentile of every category when taking the RAIT (Reynolds Adaptable Intelligence Test)</li>
-    </ul>
-    
-    <p class="category">Education</p>
-    <ul>
-        <li class="college">
-            <p class="bolded-text">Software Developer - Associate's Degree</p>
-            <ul>
-                <li>Fox Valley Technical College, Appleton, WI</li>
-                <li>May 2021 - GPA: 4.0</li>
-            </ul>
-            <br/>
-        </li>
-        <li class="college">
-            <p class="bolded-text">Physics - Bachelor's Degree</p>
-            <ul>
-                <li>University of Wisconsin-Madison, Madison, WI</li>
-                <li>May 2016</li>
-            </ul>
-        </li>  
-    </ul>
-    <p class="category">Work Experience</p>
-    <ul>
-        <li>Warehouse Associate - Amazon Fullfillment - (September 2020 - current)</li>
-        <br />
-            <ul>
-                <li>Trained and succeeded in multiple roles</li>
-            </ul>
-        <br />
-        <li>Popcorn Stall Lead - Festival Foods - (Dec 2019 - Sept 2020)
-            <br />
-            <ul>
-                <li>Manage and train associates</li>
-                <li>Work with store leaderships and corporate offices to improve and grow business</li>
-                <li>Improved weekly sales by 50% through 6 months</li>
-            </ul>
-        </li>
-    </ul>
-</div>
-<div id="coverletter" class="scrollables">
-    <h3>Dear Hiring Manager,</h3>
-    <p>I am writing to express interest in the open software developer/engineer position at your company. My analytical skills, ability to learn quickly, and communication aptitude all make me an ideal fit for the position.</p>
-    <br />
-    <p>For the positions of software developer and engineer I bring the following skillset:</p>
-    <ul>
-        <li>Analytical Thinker</li>
-        <li>Problem Solver</li>
-        <li>Quick/Avid Learner</li>
-        <li>Strong Communicator</li>
-        <li>Ability to Innovate</li>
-    </ul>
-    <br />
-    <p>It may have taken me longer than I expected to find what I want for my future, but now that I know where I want to be, I’m ready to put myself fully into showing what I’m capable of and moving forward quickly in the workplace. I look forward to discussing my possible future at your company.</p>
-    <br />
-    <p>Thank you for your time and consideration.</p>
-    <br />
-    <p>Sincerely,</p>
-    <br />
-    <p>Daniel Butzen</p>
-</div>
-<div id="projects" class="scrollables">
-    <div class="grid-container">
-        <div id="description1" class="description">
-            <h2>Scrabble App</h2>
-            <h3>Features:</h3>
-            <ul class="feature-list">
-                <li>Javascript</li>
-                <li>HTML/CSS</li>
-                <li>C#</li>
-                <li>Visual Studio</li>
-                <li>Web App</li>
-                <li>MVC</li>
-                <li>Multitier architecture</li>
-            </ul>
-        </div>
-        <div id="video1" class="video">
-            <iframe width="90%" height="90%" src="https://www.youtube.com/embed/Q6rlSUkVZa0">
-            </iframe>
-        </div>
+
         
-        <div id="description2" class="description">
-            <h2>FitApp</h2>
-            <h3>Features:</h3>
-            <ul class="feature-list">
-                <li>C#</li>
-                <li>XML</li>
-                <li>WPF</li>
-                <li>Visual Studio</li>
-                <li>Multitier architecture</li>
-                <li>Database Design</li>
-            </ul>
-        </div>
-        <div id="video2" class="video">
-            <iframe width="90%" height="90%" src="https://www.youtube.com/embed/byLYuOeMGf0">
-            </iframe>
+        <div id="swappable-surrounder">
+            <div class="swappable rounded-border">
+
+                <div id="about" class="scrollables">
+                    <h3>Dan's Story</h3>
+                    <p></p>
+                    <p>Dan started his adult life at the University of Wisconsin - Madison, where he achieved a Bachelor's of Science from the Physics Department. Post-graduation, he decided to explore 
+                        a possible future in the actuarial field, and proceeded to pass the first three exams (probability, financial mathematics, and methods of financial economics) before deciding
+                        against going straight into the actuarial field. Remembering some computer science classes he took at Madison, Dan looked into the computer science field, and found his calling. Now graduated from Fox Valley Technical College with a Software Developer Associate's Degree, Dan is continuing to pursue programming with a passion, including continuing to improve his existing projects and starting new ones (most recently, his wedding website).</p>
+
+
+                        <p>Dan's interests in the field of IT lay mostly in back software development, specifically using .NET framework with c# and javascript. </p>
+
+                        <p>Dan hopes to start making waves in the IT field as soon as possible with employment either in the Indianapolis are or remote.</p>
+
+
+                    <h3>Contact:</h3>
+                    <ul>
+                        <li>Address
+                            <ul>
+                                <li>8223 Bella Vista Blv apt 5312</li>
+                                <li>Indianapolis, IN</li>
+                                <li>46038</li>
+                            </ul>
+                        </li>
+                        <br/>
+                        <li>Email: dtbutzen@att.net</li>
+                        <br/>
+                        <li>Cell: (920) 574-7830</li>
+                    </ul>
+                </div>
+                <div id="resume" class="scrollables">
+                    <h2>Resume</h2>
+                    <p><strong>Objective:</strong> Full time IT emplyment as a software developer or engineer.</p>
+
+                    <p class="category">Technical Skills</p>
+                    <ul>
+                        <li>.NET</li>
+                        <li>C#</li>
+                        <li>Javscript/Jquery</li>
+                        <li>MySQL/Sql Server</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+
+                    <p class="category">Professional Skills</p>
+                    <ul>
+                        <li>Probability Actuarial Exam</li>
+                        <li>Financial Mathematics Actuarial Exam</li>
+                        <li>Models of Financial Economics Actuarial Exam</li>
+                        <li>Scored in 99th percentile of every category when taking the RAIT (Reynolds Adaptable Intelligence Test)</li>
+                    </ul>
+
+                    <p class="category">Education</p>
+                    <ul>
+                        <li class="college">
+                            <p class="bolded-text">Software Developer - Associate's Degree</p>
+                            <ul>
+                                <li>Fox Valley Technical College, Appleton, WI</li>
+                                <li>May 2021 - GPA: 4.0</li>
+                            </ul>
+                            <br/>
+                        </li>
+                        <li class="college">
+                            <p class="bolded-text">Physics - Bachelor's Degree</p>
+                            <ul>
+                                <li>University of Wisconsin-Madison, Madison, WI</li>
+                                <li>May 2016</li>
+                            </ul>
+                        </li>  
+                    </ul>
+                    <p class="category">Work Experience</p>
+                    <ul>
+                        <li>Warehouse Associate - Amazon Fullfillment - (September 2020 - current)</li>
+                        <br />
+                            <ul>
+                                <li>Trained and succeeded in multiple roles</li>
+                            </ul>
+                        <br />
+                        <li>Popcorn Stall Lead - Festival Foods - (Dec 2019 - Sept 2020)
+                            <br />
+                            <ul>
+                                <li>Manage and train associates</li>
+                                <li>Work with store leaderships and corporate offices to improve and grow business</li>
+                                <li>Improved weekly sales by 50% through 6 months</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div id="coverletter" class="scrollables">
+                    <h3>Dear Hiring Manager,</h3>
+                    <p>I am writing to express interest in the open software developer/engineer position at your company. My analytical skills, ability to learn quickly, and communication aptitude all make me an ideal fit for the position.</p>
+                    <br />
+                    <p>For the positions of software developer and engineer I bring the following skillset:</p>
+                    <ul>
+                        <li>Analytical Thinker</li>
+                        <li>Problem Solver</li>
+                        <li>Quick/Avid Learner</li>
+                        <li>Strong Communicator</li>
+                        <li>Ability to Innovate</li>
+                    </ul>
+                    <br />
+                    <p>It may have taken me longer than I expected to find what I want for my future, but now that I know where I want to be, I’m ready to put myself fully into showing what I’m capable of and moving forward quickly in the workplace. I look forward to discussing my possible future at your company.</p>
+                    <br />
+                    <p>Thank you for your time and consideration.</p>
+                    <br />
+                    <p>Sincerely,</p>
+                    <br />
+                    <p>Daniel Butzen</p>
+                </div>
+                <div id="projects" class="scrollables">
+                    <div class="grid-container">
+                        <div id="description1" class="description">
+                            <h2>Scrabble App</h2>
+                            <h3>Features:</h3>
+                            <ul class="feature-list">
+                                <li>Javascript</li>
+                                <li>HTML/CSS</li>
+                                <li>C#</li>
+                                <li>Visual Studio</li>
+                                <li>Web App</li>
+                                <li>MVC</li>
+                                <li>Multitier architecture</li>
+                            </ul>
+                        </div>
+                        <div id="video1" class="video">
+                            <iframe width="90%" height="90%" src="https://www.youtube.com/embed/Q6rlSUkVZa0">
+                            </iframe>
+                        </div>
+
+                        <div id="description2" class="description">
+                            <h2>FitApp</h2>
+                            <h3>Features:</h3>
+                            <ul class="feature-list">
+                                <li>C#</li>
+                                <li>XML</li>
+                                <li>WPF</li>
+                                <li>Visual Studio</li>
+                                <li>Multitier architecture</li>
+                                <li>Database Design</li>
+                            </ul>
+                        </div>
+                        <div id="video2" class="video">
+                            <iframe width="90%" height="90%" src="https://www.youtube.com/embed/byLYuOeMGf0">
+                            </iframe>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
         </div>
     </div>
-    
-    
-</div>
-
-    
-</div>
 </body>
-</div>
 </html>
