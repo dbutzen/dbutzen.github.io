@@ -29,10 +29,12 @@
             width: 100%;
             text-align: center;
             background-color: black;
+            z-index: 2;
         }
         
         #nav h2 {
             text-align: center;
+            padding: 10px;
             padding: 10px;
             color: black;
             float: right;
@@ -76,7 +78,7 @@
             padding: 15px;
             height: 1000px;
             background-color: #f1f1f1;
-            font-size: 20px;
+            font-size: 3vw;
         }
         
         
@@ -115,6 +117,43 @@
             #menu { display: none; }
             #dropdown { display: block; color: }
             
+        }
+        
+        .video-section {
+            float: right;
+            width: 100%;
+            height: auto;
+        }
+        
+        .video {
+            float: left;
+            padding-top: 10%;
+            padding-left: 5%;
+            width: 60%;
+            height: 150%;
+            
+        }
+        
+        .description {
+            float: left;
+            width: 30%;
+            font-size: 2.5vw;
+        }
+        
+        .video-container { 
+            position: relative; 
+            padding-bottom: 56.25%; 
+            padding-top: 30px; 
+            height: 0; 
+            overflow: hidden; 
+        }
+
+        .video-container iframe{ 
+            position: absolute; 
+            top: 20px; 
+            left: 5%; 
+            width: 90%; 
+            height: 90%; 
         }
         
         
@@ -364,39 +403,48 @@
                 </div>
                 <div id="projects" class="scrollables">
                     <div class="grid-container">
-                        <div id="description1" class="description">
-                            <h2>Scrabble App</h2>
-                            <h3>Features:</h3>
-                            <ul class="feature-list">
-                                <li>Javascript</li>
-                                <li>HTML/CSS</li>
-                                <li>C#</li>
-                                <li>Visual Studio</li>
-                                <li>Web App</li>
-                                <li>MVC</li>
-                                <li>Multitier architecture</li>
-                            </ul>
+                        <div class="video-section">
+                            <div id="description1" class="description">
+                                <h2>Scrabble App</h2>
+                                <h3>Features:</h3>
+                                <ul class="feature-list">
+                                    <li>Javascript</li>
+                                    <li>HTML/CSS</li>
+                                    <li>C#</li>
+                                    <li>Visual Studio</li>
+                                    <li>Web App</li>
+                                    <li>MVC</li>
+                                    <li>Multitier architecture</li>
+                                </ul>
+                            </div>
+                            <div class="video-container">
+                                <div id="video1" class="video">
+                                    <iframe width="90%" height="90%" src="https://www.youtube.com/embed/Q6rlSUkVZa0" allow="fullscreen;">
+                                    </iframe>
+                                </div>
+                            </div>
                         </div>
-                        <div id="video1" class="video">
-                            <iframe width="90%" height="90%" src="https://www.youtube.com/embed/Q6rlSUkVZa0">
-                            </iframe>
-                        </div>
-
-                        <div id="description2" class="description">
-                            <h2>FitApp</h2>
-                            <h3>Features:</h3>
-                            <ul class="feature-list">
-                                <li>C#</li>
-                                <li>XML</li>
-                                <li>WPF</li>
-                                <li>Visual Studio</li>
-                                <li>Multitier architecture</li>
-                                <li>Database Design</li>
-                            </ul>
-                        </div>
-                        <div id="video2" class="video">
-                            <iframe width="90%" height="90%" src="https://www.youtube.com/embed/byLYuOeMGf0">
-                            </iframe>
+                        
+                        <div class="video-section">
+                            
+                            <div id="description2" class="description">
+                                <h2>FitApp</h2>
+                                <h3>Features:</h3>
+                                <ul class="feature-list">
+                                    <li>C#</li>
+                                    <li>XML</li>
+                                    <li>WPF</li>
+                                    <li>Visual Studio</li>
+                                    <li>Multitier architecture</li>
+                                    <li>Database Design</li>
+                                </ul>
+                            </div>
+                            <div class="video-container">
+                                <div id="video2" class="video">
+                                    <iframe width="90%" height="90%" src="https://www.youtube.com/embed/byLYuOeMGf0" allow="fullscreen;">
+                                    </iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
