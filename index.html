@@ -81,7 +81,7 @@
             padding-bottom: 10%;
             height: auto;
             background-color: #f1f1f1;
-            font-size: min(30px, 3vw);
+            font-size: min(16px, 3vw);
         }
         
         .scrollables {
@@ -130,6 +130,7 @@
             float: right;
             width: 100%;
             height: auto;
+            margin-top: 30px;
         }
         
         .video {
@@ -145,7 +146,7 @@
             float: left;
             width: 30%;
             padding-left: 5%;
-            font-size: min(40px, 2.5vw);
+            font-size: min(25px, 2.5vw);
         }
         
         .video-container { 
@@ -165,7 +166,12 @@
         }
         
         #projects {
-            height: 2500px;
+            height: 3500px;
+        }
+        
+        hr{
+            height: 5px;
+            background-color: black;
         }
         
         
@@ -416,11 +422,18 @@
                 </div>-->
                 <div id="projects" class="scrollables">
                     <h1>All project code can be found at my <a href="https://github.com/dbutzen/">Github</a></h1>
+                    <hr />
                     <div class="grid-container">
                         <!--WeddingWebsite-->
                         <div class="video-section">
                             <div id="description3" class="description">
                                 <h2><a href="https://github.com/dbutzen/Wedding">Wedding Website</a></h2>
+                                <h3>Description:</h3>
+                                <ul class="feature-list">
+                                    <li>Personal Wedding Website</li>
+                                    <li>Guest RSVP function</li>
+                                    <li>Admin add/edit/remove guest function</li>
+                                </ul>
                                 <h3>Features:</h3>
                                 <ul class="feature-list">
                                     <li>ASP.NET Core</li>
@@ -443,10 +456,46 @@
                                 </div>
                             </div>
                         </div>
+                        <hr />
+                        <!--Chess-->
+                        <div class="video-section">
+                            <div id="description1" class="description">
+                                <h2><a href="https://github.com/dbutzen/Chess.git">Chess</a></h2>
+                                <h4><a href="https://github.com/dbutzen/Chess/blob/main/DTB.Chess.WebApp/wwwroot/js/site.js">Javascript Link</a></h3>
+                                <h3>Description:</h3>
+                                <ul class="feature-list">
+                                    <li>Fully fledged chess logic</li>
+                                    <li>Check works correctly</li>
+                                    <li>Doesn't allow illegal moves</li>
+                                    <li>En passant allowed</li>
+                                    <li>Castling allowed</li>
+                                </ul>
+                                <h3>Features:</h3>
+                                <ul class="feature-list">
+                                    <li>Javascript</li>
+                                    <li>HTML/CSS</li>
+                                    <li>Visual Studio</li>
+                                    <li>Web App</li>
+                                </ul>
+                            </div>
+                            <div class="video-container">
+                                <div id="video1" class="video">
+                                    <iframe width="90%" height="90%" src="https://www.youtube.com/embed/QL_FuXo9u1c" allow="fullscreen;">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
                         <!--Scrabble//-->
                         <div class="video-section">
                             <div id="description1" class="description">
                                 <h2><a href="https://github.com/dbutzen/Scrabble">Scrabble App</a></h2>
+                                <h3>Description:</h3>
+                                <ul class="feature-list">
+                                    <li>Single player scrabble</li>
+                                    <li>Includes all tile placement rules</li>
+                                    <li>Includes dictionary API for words played</li>
+                                </ul>
                                 <h3>Features:</h3>
                                 <ul class="feature-list">
                                     <li>Javascript</li>
@@ -465,11 +514,20 @@
                                 </div>
                             </div>
                         </div>
+                        <hr />
                         <!--FitApp//-->
                         <div class="video-section">
                             
                             <div id="description2" class="description">
                                 <h2><a href="https://github.com/dbutzen/FitappFitApp">FitApp</a></h2>
+                                <h3>Description:</h3>
+                                <ul class="feature-list">
+                                    <li>App for health tracking</li>
+                                    <li>Mobile App for user interface</li>
+                                    <li>WPF for admin interface</li>
+                                    <li>Add/Edit/Delete items, activities, users from WPF</li>
+                                    <li>Includes API connection to nutritionx</li>
+                                </ul>
                                 <h3>Features:</h3>
                                 <ul class="feature-list">
                                     <li>C#</li>
